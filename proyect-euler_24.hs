@@ -1,0 +1,30 @@
+
+
+--By Chris M. Perez Santiago , 2016/13/10
+
+
+{-
+Lexicographic permutations
+Problem 24
+
+A permutation is an ordered arrangement of objects. For example, 3124 is one
+possible permutation of the digits 1, 2, 3 and 4. If all of the permutations
+are listed numerically or alphabetically, we call it lexicographic order.
+The lexicographic permutations of 0, 1 and 2 are:
+                        012   021   102   120   201   210
+What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
+
+-}
+
+
+import Data.List
+
+all_permutations_possible :: [String]
+all_permutations_possible = permutations "0123456789"
+
+
+the_lexicographic_permutations :: String
+the_lexicographic_permutations =  (sort $ all_permutations_possible) !! 999999
+
+
+main = do print(the_lexicographic_permutations)
